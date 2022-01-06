@@ -110,13 +110,13 @@ module.exports.suscribe=(req,res,next)=>{
                 }
             });
                 
-            const api_key='330a75755b28348d5ccd6287bcb6eae8-us1';
+            const api_key=process.env.SUSCRIBE_API_KEY;
             const options={
                 method:'POST', //Post method , sending data to a web server
                 auth:`jeremias:${api_key}` // API authentification
             }
         
-            const list_id='ca4a725ff4';
+            const list_id=process.env.LIST_ID;
             const url=`https://us1.api.mailchimp.com/3.0/lists/${list_id}/members`;
         
             const request=https.request(url,options,response=>{
