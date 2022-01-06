@@ -57,7 +57,7 @@ footer .container.footer .row .col{
 
 footer .container.footer .copyright {
     text-align: center;
-    background-color: #fff;
+    background-color:var(--extra-light-grey);
     display: flex;
     justify-content: center;
     align-items:center;
