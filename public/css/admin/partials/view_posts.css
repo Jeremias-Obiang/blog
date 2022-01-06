@@ -1,0 +1,36 @@
+.main .options{
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .options button{
+    margin: 0 2rem;
+}
+td{
+    border: 1px solid #dee2e6;
+}
+td.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+td.actions span {
+    width:50%;
+}
+
+td.actions span button{
+    width: 90%;
+    margin-right: 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+td.actions span button i{
+    margin-right:5px;
+}
+th.actions{
+    width: 10%;
+}

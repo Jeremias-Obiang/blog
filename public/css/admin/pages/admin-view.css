@@ -1,0 +1,15 @@
+.container.view_post{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:2rem;
+}
+
+body > div.container.view_post > nav{
+    width:70%;
+}
+
+body > div.container.view_post > div.card{
+    width:100%;
+}

@@ -1,0 +1,47 @@
+
+<% if(locals.data) {%>
+  <section class="display_posts">
+    <div class="">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col" class="actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(post=> { %>
+            <tr>
+              <th scope="row">
+                <%= post.id %>
+              </th>
+              <td>
+                <%= post.title %>
+              </td>
+              <td class="actions">
+                <span>
+                  <button class="btn btn-light"><a href="/admin/view/<%= post.id %>" style="text-decoration: none;text-decoration: none; display:flex; align-items:center; justify-content:center;"><i class="far fa-eye"></i><span>View</span></a></button>
+                </span>
+                <span>
+                  <button class="btn btn-light"><a href="/admin/edit/<%= post.id %> " style="text-decoration: none;text-decoration: none; display:flex; align-items:center; justify-content:center;"><i class="fas fa-edit"></i><span>Edit</span></a></button>
+                </span>
+                <span>
+                  <button class="btn btn-light"><a href="/admin/delete/<%= post.id %> " style="text-decoration: none;text-decoration: none; display:flex; align-items:center; justify-content:center;"><i class="fas fa-trash-alt"></i><span>Delete</span></a></button>
+                </span>
+              </td>
+            </tr>
+          <% }); %>
+                  
+        </tbody>
+      </table>
+    </div>
+  </section>
+<%}else{%>
+  <h5>NO POSTS YET!</h5>
+  <P>Get inspired and create new posts</P>
+<% } %>
+
+
+
+

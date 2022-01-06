@@ -1,0 +1,93 @@
+:root{
+    --light-grey:#c7bfaf;
+    --black:#000000;
+    --dark-grey:#333230;
+    --extra-light-grey:#f2f2f2;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+aside.promo div.promo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+aside.promo div.promo-container img{
+    width: 100%;
+    height:160px;
+}
+
+aside.promo div.promo-container .card-body{
+    text-align: center;
+}
+
+aside.promo div.promo-container .btn {
+    background-color: var(--dark-grey);
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+
+aside.promo div.promo-container .header{
+    margin-bottom: 30px;
+    text-align: center;
+    width:100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--extra-light-grey);
+    /* border: solid 1px yellow; */
+}
+
+aside.promo div.promo-container .header h3{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+aside.promo .carousel-control-prev-icon,aside.promo .carousel-control-next-icon {
+    background-color: var(--dark-grey);
+}
+
+.card-body .card-title{
+    text-transform: uppercase;
+    word-spacing: 2px;
+    font-weight: 700;
+}
+
+
+.card-body .card-text{
+    color: #737373;
+    font-size:14px;
+}
+
+.card-body .price{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+@media screen and (min-width: 1024px){
+    aside.promo #carouselExampleControls > a.carousel-control-prev{
+        left:20;
+    }
+    aside.promo #carouselExampleControls > a.carousel-control-next{
+        right:20;
+    }
+}

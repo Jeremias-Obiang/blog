@@ -1,0 +1,190 @@
+<html lang="en">
+    <%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="post">
+        <div class="container" style="padding-top: .5rem;">
+            <div class="post">
+                <div class="post-header">
+                    <nav aria-label="breadcrumb" style="margin-top: 1rem;">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Post</li>
+                        </ol>
+                    </nav>
+
+                    <div class="title">
+                        <h1> <%= post.title %>  </h1>
+                    </div>
+
+                    <div class="date">
+                        <p><%= post.created_at.toString().slice(0,16) %></p>
+                    </div>
+                        
+                    <div class="image" style="margin-bottom: 2rem;">
+                        <img src="<%= post.image %>" alt="">
+                    </div>
+
+                </div>
+
+                <div class="content">
+                    <p><%= post.content %> </p>
+                </div>
+                <div class="post-footer" style="display: flex;justify-content: center;align-items:center;margin: 0;">     
+                    <i class="fas fa-share-alt fa-lg"></i>
+                    <div class="share" id="share" style="margin: 0;margin-left: 2rem;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="similar-posts">
+                <div class="title"><h3>You may also like</h3></div>
+                <div class="posts-wrapper">
+                    <% if(locals.same_category) {%>
+                        <% same_category.forEach(post => { %>
+                            <div class="card" style="width: 18rem;">
+                                <img src="<%= post.image %>" class="card-img-top" alt="...">
+    
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= post.title %></h5>
+                                    <p class="card-text"><%= post.created_at.toString().slice(0,16) %></p>
+                                    <a style="margin-bottom: 10px;" href="/post/<%= post.id %>" class="btn btn-dark">Read More</a>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% }else if(locals.same_category.length<1) {%>
+                        <p>No similar posts yet!</p>
+                    <% } %>   
+                    
+                </div>
+            </div>
+
+
+            <div class="comments">
+                <div class="comment-title">
+                    <h3><%= len %> comments</h3>
+                </div>
+
+
+                <ul class="comment-list">
+                    <% locals.comments.forEach(comment => { %> 
+                        
+                        <li class="comment">
+                            <div class="comment-block">
+                                <div class="comment-content">
+                                    <div class="comment-info">
+                                        <i class="fas fa-user"></i>
+                                        <h6 class="author-name"><%= comment.username %></h6>
+                                        <span class="comment-date" style="font-size:12px"><%= comment.date.toString().slice(0,15) %></span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p style="font-size:20px"><%= comment.content %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    <% }) %>
+
+                </ul>
+
+            </div>
+
+            
+            <div class="leave-comments" style="margin-bottom: 3rem;">
+                <div class="title"><h3>Leave a comment</h3></div>
+
+                <% if(locals.error) {%>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><%= error %> </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+
+                <% if(locals.success) {%>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><%= locals.success %></strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+                   
+    
+                <p class="note">*Your email will not be published</p>
+                <form action="/post/<%= post.id %>" method="post">
+                    <div class="comment-text">
+                        <textarea style="width: 100%; max-width: 100%;" placeholder="Comment" name="content"></textarea>
+                    </div>
+                    <button type="submit" style="margin-top: 10px;" >Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </main>
+
+    <div class="side container">
+        <%- include('../partials/aboutme') %>
+        <%- include('../partials/latest') %>
+    </div>
+         
+
+    <%- include('../partials/footer') %>  
+    <script src="/js/home/header.js"></script>
+    <script>
+        
+        //we have to get the information about the specific post from our backend using fetch API ...
+        let final_results;
+        var post_id='<%= locals.post.id %>';
+        const url='http://localhost:3000/admin/json/'+post_id;
+        let myFetch = fetch(url);
+
+        //Fetch post information from database ...
+        async function getData(){
+            try {
+                let response = await fetch(url);
+                let data=await response.json();
+                final_results=data;
+            } catch (error) {
+                console.log(error);
+            }finally{
+                return final_results;
+            }
+        }
+            
+        function setData(data){
+            //Set post title ...
+            let title=data.post_data.title;
+            $("#share").jsSocials({
+                url: "/http://localhost:3000/profile/"+post_id,//Here we'll put the url of the specific post ...
+                text: title,//Here will go the title of the post ...
+                showLabel: false,
+                shares: [
+                    "whatsapp","facebook","email"
+                ],
+            });
+        }
+
+        async function initApp(){
+            let data;
+            try {
+                switch (document.readyState) {
+                    case "loading":
+                        data=await getData();
+                    case "complete":
+                        setData(data);
+                        break;
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
+        initApp();
+            
+    </script>
+</body>
+</html>

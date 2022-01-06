@@ -1,0 +1,6 @@
+GET http://localhost:3000/admin/json/1
+Content-Type: application/json
+
+
+
+

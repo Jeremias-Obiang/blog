@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+:root{
+    --light-grey:#c7bfaf;
+    --black:#000000;
+    --dark-grey:#333230;
+    --extra-light-grey:#f2f2f2;
+}
+
+body,html{
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    padding:20px;
+    margin: auto;
+    transition: all 0.4s ease;
+    background-color: var(--dark-grey);
+    position: absolute;
+    height: 60px;
+    top: 0;
+    z-index: 999998;
+    top: 0;
+    left: 0;
+}
+
+
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .content .icon.menu-btn{
+    display: block;
+}
+
+
+.navbar .logo{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.navbar .logo ul.nav{
+    display: none;
+}
+.navbar .logo .active.nav a{
+    color: #ee7412;
+}
+
+.navbar .logo ul li{
+    list-style: none;
+    padding-right: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.navbar .logo a:hover{
+    color: var(--light-grey);
+}
+
+.navbar .logo ul li:hover{
+    color: var(--light-grey);
+}
+.navbar .content .icon.menu-btn .fas.fa-bars{
+    color: white !important;
+}
+
+
+
+.menu-list li a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800px;
+    margin-left: 25px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.icon {
+    color: var(--light-grey);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    color: white;
+}
+
+body.disabledScroll {
+    overflow:hidden;
+}
+
+.navbar .menu-list {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    background-color:var(--dark-grey);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.4s ease;
+    padding:0;
+    margin: 0;
+    list-style: none;
+    
+}
+
+
+.navbar .menu-list.active {
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.icon {
+    display: block;
+}
+
+.icon.hide {
+    display: none;
+}
+.navbar .menu-list .profile{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    border-bottom: solid 0.1px #85817b;
+    position:relative;
+    top: 60px;
+    margin-bottom: 40px;
+}
+.navbar .menu-list .profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+ 
+.navbar .menu-list .profile p{
+    display: inline-block;
+    color: white;
+}
+
+.navbar .menu-list .profile button{
+    border: none;
+    outline: none;
+    width:150px;
+    height:40px;
+    background-color:var(--extra-light-grey);
+}
+
+.navbar .menu-list .profile a{
+    color:var(--black);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:14px;
+}
+    
+.navbar .menu-list .links{
+    margin-top:30px ;
+    padding: 0;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    
+
+.navbar .menu-list .links ul{
+    margin: 0;
+    padding-top: 5px;
+}
+
+    
+.navbar .menu-list .links ul li.nav {
+    padding: 15px;
+}
+
+.navbar .menu-list .links ul li.nav a i.fas{
+    margin-right: 10px;
+}
+
+
+.navbar .menu-list .links ul li.active.nav a{
+    color: #ee7412;
+}
+
+.navbar .menu-list .links ul li.nav a{
+    font-weight:bold;
+}
+
+.navbar .menu-list .links ul li.nav a:hover{
+    color: white;
+}
+
+
+div.banner{
+    margin:0;
+    text-align: center;
+    position:relative;
+    top: 60px;
+    background-color: white;
+    padding:5px;
+    height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.banner p{
+    padding: 0;
+    margin: 0;
+      
+}
+.banner p a{
+    text-decoration:none;
+    text-transform:none;
+    color:black;
+}
+
+.banner .name{
+    font-size:50px;
+}
+
+.banner .description{
+    text-transform:uppercase;
+    font-family: "Roboto", sans-serif;
+    display: none;
+}
+
+#carouselExampleIndicators{
+    position:relative;
+    top: 60px;
+    height:435px;
+}
+
+
+
+#carouselExampleIndicators .carousel-inner .carousel-item{
+    width: 100%;
+    height: 100%;
+}
+#carouselExampleIndicators .carousel-inner  .carousel-item img{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#carouselExampleIndicators .carousel-inner .carousel-item .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /* background: rgb(0,0,0,0.8); */
+    display: flex;
+    align-items: center;
+}
+    
+
+#carouselExampleIndicators .carousel-inner .carousel-item .cover .header-content{
+    position: relative;
+    padding: 10px;
+    width: 70%;
+    height:25%;
+    background: rgb(0,0,0,0.6);
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    
+
+#carouselExampleIndicators .carousel-inner .carousel-item .cover .header-content .category{
+    display: block;
+    text-align: center;
+}
+    
+#carouselExampleIndicators .carousel-inner .carousel-item .cover .header-content .category a{
+    font-family: Barlow Condensed;
+    font-size: 12px !important;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom:3px;
+    display: inline-block;
+    color: white;
+}
+
+#carouselExampleIndicators .carousel-inner .carousel-item .cover .header-content .title {
+    display: block;
+    text-align: center;
+}
+
+#carouselExampleIndicators .carousel-inner .carousel-item .cover .header-content .title a{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    word-wrap: break-word;
+    font-weight: 600;
+    font-size:17px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 550px){
+    .navbar{
+        height: 80px;
+    }
+    
+    .navbar .logo ul.nav{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .navbar .content .icon.menu-btn{
+        display: none;
+    }
+    .navbar .menu-list.active{
+        display: none;
+    }
+    div.banner{
+        height: 200px;
+    }
+    .banner .name{
+        font-size:70px;
+    }
+}
+
+
+ @media screen and (min-width: 768px) {
+    .navbar{
+        height: 80px;
+    }
+    .navbar .content{
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    body > header > nav > div > div.logo > ul:nth-child(3) > li:nth-child(2){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+    }
+    body > header > nav > div > div.logo > ul:nth-child(3) > li:nth-child(2) > div.user-logo{
+        margin-right: 7px;
+    }
+
+    body > header > nav > div > div.logo > ul:nth-child(3) > li:nth-child(2) > div.logout{
+        transition: all 0.4s ease;
+    }
+
+    
+    body > header > nav > div > div.logo > ul:nth-child(3) > li:nth-child(2) > div.logout.hide{
+        position: relative;
+        left: -100;
+        display: none;
+        transition: all 0.4s ease;
+    }
+    .btn:focus {
+        box-shadow: none;
+    }
+} 
+
+
+.navbar .logo ul{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin:0;
+    padding:0;
+}
+    
+
+
+
+    

@@ -1,0 +1,80 @@
+<article class="posts">
+    <% data.forEach(post => { %>
+        <div class="post card">
+            <div class="date">
+                <p> <%= post.created_at.toString().slice(0,10) %> </p>
+            </div>
+
+            <div class="image">
+                <img src="<%= post.image %>" alt="">
+            </div>
+
+            <div class="details">
+                <div class="post-header">
+                    <h2 class="title"><a href="#"> <%= post.title %> </a></h2>
+                </div>
+
+                <div class="post-content" id="post-content">
+                    <p> <%= post.content.slice(0,150) %> ... </p>
+                </div>
+            </div>
+                
+
+            <div class="post-footer">
+                <div class="button"><button><a href="/post/<%= post.id %>">Read more</a></button></div>
+            </div>
+
+        </div>
+    <%})%> 
+</article>
+
+<!--Display the links to the pages-->
+<section class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm">
+            <li class="page-item">
+                <% if(page > 1) { %> <a class="page-link" href="/?page=<%=page-1%>">Previous</a> <% } %>
+            </li>
+            <% for(let i = iterator; i <= endingLink; i++) { %>
+                <% if(i === page) { %>
+                    <li class="page-item">
+                        <a class="page-link active" href="/?page=<%=i%>"><%=i%></a>
+                        <% continue; %>
+                        <% } %>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="/?page=<%=i%>"><%=i%></a></li>
+                    <% } %> 
+    
+                <% if(page < numberOfPages) { %> <li class="page-item"><a class="page-link" href="/?page=<%=page+1%>">Next</a></li> <% } %>
+        </ul>
+    </nav>
+</section>
+        
+
+
+    
+    
+    
+                
+                
+
+        
+          
+
+
+
+
+   
+    
+   
+    
+
+
+    
+
+
+
+
+
+
+   

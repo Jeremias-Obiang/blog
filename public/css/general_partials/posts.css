@@ -1,0 +1,236 @@
+:root{
+    --light-grey:#c7bfaf;
+    --black:#000000;
+    --dark-grey:#333230;
+    --extra-light-grey:#f2f2f2;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+    
+
+article.posts{
+    display: grid;
+    width: 100%;
+    grid-gap: 3em;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 2.5em;
+    height: fit-content;
+}
+article.posts .post{
+    border-radius: .3em;
+    /* box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.1); */
+    /* border: solid 1px black; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+}
+article.posts .post.card{
+    border-radius: 0;
+    border: none;
+}
+article.posts .post.card .date{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 20px;
+    left: 0;
+    width: 40%;
+    height: 25px;
+    background-color: var(--dark-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .7;
+    z-index: 4;
+    height:40px;
+    font-weight: bold;
+    color: white;
+}
+article.posts .post.card .date p{
+    margin: 0;
+    font-size: 14px;
+}
+
+article.posts .post.card  .image{
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+article.posts  div.post.card  div.image  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .2s;  
+}
+article.posts  div.post.card  div.image  img:hover{
+    transform: scale(1.1);
+}
+article.posts .post.card .details .post-header{
+    margin: 15px 0px;
+}
+article.posts .post.card .details .post-header .tags{
+    display: flex;
+    list-style-type: none;
+}
+article.posts .post.card .details .post-header .tags li{
+    margin-right: 10px;
+}
+article.posts .post.card .details .post-header .tags li a{
+    text-transform: lowercase;
+    font-size: 12px;
+}
+article.posts .post.card .details .post-header h2.title{
+    font-family: Barlow Condensed;
+    font-size: 19px;
+    line-height: 36px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #444;
+    word-wrap: break-word;
+}
+article.posts .post.card .details .post-header h2.title a{
+    color: #444;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+article.posts .post.card .details .post-content{
+    padding:0 1rem;
+}
+article.posts .post.card .details .post-content p{
+    color: #737373;
+    font-size:14px;
+}
+
+
+article.posts .post.card .post-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+article.posts .post.card  .post-footer .button{
+    margin: 0;
+    padding: 0;
+}
+article.posts .post.card  .post-footer .button button{
+    font-family: Barlow Condensed;
+    font-size: 14px !important;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    width: 120px;
+    border: none;
+    height:40px;
+    background-color:var(--dark-grey);
+}
+
+article.posts .post.card  .post-footer .button button:hover{
+    background-color: black;
+}
+
+article.posts .post.card  .post-footer .button button a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+article.posts .post.card  .post-footer .share{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+article.posts .post.card  .post-footer .share .share-icon{
+    cursor: pointer;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.visible{
+    margin-right: 20px;
+    right:0;
+    transition: all 0.9s ease;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.hide{
+    visibility: hidden;
+    margin-right: 25px;
+    position:relative;
+    right:-190px;
+    transition: all 0.9s ease-out;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.visible .fab{
+    cursor: pointer;
+    margin-left:10px;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.visible .fab.fa-facebook{
+    color: blue;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.visible .fab.fa-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+          /* Also define standard property for compatibility  */
+          background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+article.posts .post.card  .post-footer .share .social-icons.visible .fab.fa-whatsapp{
+    color: green;
+}
+
+
+article.posts .posts.card .post-footer .share .share-icon{
+    cursor: pointer;
+}
+
+article.posts .posts.card .post-footer .share .social-icons.visible{
+    margin-right: 20px;
+    right:0;
+    transition: all 0.9s ease;
+}
+
+article.posts .posts-container .post  .post-footer .share .social-icons.hide{
+    visibility: hidden;
+    margin-right: 25px;
+    position:relative;
+    right:-170px;
+    transition: all 0.9s ease-out;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a.active{
+    background-color: var(--light-grey);
+}
+
+@media screen and (min-width: 768px){
+    article.posts{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+   
+    article.posts .post.card .details .post-header h2.title{
+        font-size:19px;
+    }
+}
+    
+
+
+

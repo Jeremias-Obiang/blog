@@ -1,0 +1,131 @@
+:root{
+    --light-grey:#c7bfaf;
+    --black:#000000;
+    --dark-grey:#333230;
+    --extra-light-grey:#f2f2f2;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+aside.aside-me{
+    width: 100%;
+    /* border: solid 1px red; */
+    margin: 2em 0;
+    width: 100%;
+    /* border: solid 1px green; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+aside.aside-me  .header{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+    display:flex;
+    text-align: center;
+    background-color: var(--extra-light-grey);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+aside.aside-me  .header h3{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+/* image */
+
+aside.aside-me  .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px blue; */
+}
+
+aside.aside-me  .image img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    padding: 0;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+aside.aside-me  .text{
+    text-align: center;
+}
+
+aside.aside-me  .text p.name{
+    font-size:40px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+aside.aside-me  .text p.text-description{
+    color: #737373 !important;
+    font-family: Karla;
+    font-size: 14px;
+    line-height: 26px;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+aside.aside-me  .button {
+    width: 100%;
+    text-align: center;
+}
+
+aside.aside-me .button button{
+    font-family: Barlow Condensed;
+    font-size: 14px !important;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    width: 50%;
+    border: none;
+    height:40px;
+    background-color:var(--dark-grey);
+    color: white;
+}
+
+aside.aside-me  .button button:hover{
+    background-color: var(--black);
+}
+
+
+@media screen and (min-width: 1024px){
+    aside.aside-me{
+        margin-top: 0;
+    }
+    
+    aside.aside-me  .header{
+        height:50px;
+    }
+    aside.aside-me  .image img{
+        height: 175px;
+    }
+}
+
+
+
+

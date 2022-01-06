@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="/">BLOG</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <% if(locals.len){ %> 
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/admin"><button type="button" class="btn btn-secondary">
+                                    Posts <span class="badge badge-light"><%= locals.len %></span>
+                                </button><span class="sr-only">(current)</span></a>
+                        </li>
+                    <% }else{ %> 
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/admin"><button type="button" class="btn btn-secondary">
+                                    Blog Posts <span class="badge badge-light">0</span>
+                                </button><span class="sr-only">(current)</span></a>
+                        </li>
+                    <% } %> 
+                   
+            
+                </ul>
+                <form action="/admin/search" method="POST" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" required>
+                    <div class="invalid-feedback">
+                        Please insert a value
+                    </div>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <a class="navbar-brand" href="/admin_logout" style="font-size:16px;margin-left:2rem;"><i style="margin-right:5px;" class="fas fa-sign-out-alt fa-sm"></i>Logout</a>
+            </div>
+        </div>
+    </nav>

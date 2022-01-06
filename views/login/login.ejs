@@ -1,0 +1,68 @@
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container form form-signup">
+        
+        <div class="card card-signup">
+            <div class="card-header header1">
+                <p>LOGIN</p>
+            </div>
+                
+            <div class="card-body">
+                
+                <% if(locals.error) { %>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong><%= error %> </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+
+                <% if(locals.success) { %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><%= success %> </strong>
+                        <p>Now you can Login</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+
+                <form id="form" action="/login" method="POST" encType="multipart/form-data" class="needs-validation">
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        
+                    </div>
+
+                    <div class="mb-3 password">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        <div id="emailHelp" class="form-text"><a href="/forgot-password" style="text-transform: none;text-decoration: none;">Forgot Password</a></div>
+                    </div>
+
+
+                    <div class="submit-button">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+
+                
+            </div>
+        </div>
+
+        <div class="signup">
+            <p>You don't have an account ? <strong><a href="/register">Register</a></strong></p>
+        </div>
+    </div>
+    
+    <%- include('../partials/footer') %>
+
+<script src="/js/home/header.js"></script>
+</body>
+</html>

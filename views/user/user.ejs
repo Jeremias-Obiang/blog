@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    
+    <%- include('../partials/header') %>
+    <div class="user container">
+        <div class="user card-container">
+            <img style="width: 200px;height: 200px;" class="round" src="<%= user.image %>" alt="user"/>
+            <h3><%= user.username %></h3>
+            <h6><%= user.email %></h6>
+            
+            <div class="skills">
+                <h6 style="color: white;">Change password</h6>
+                <form action="/profile/<%= user.id %>" method="post">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput" style="color: white;">Old Password</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input old password" name="old_password" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2" style="color: white;">New Password</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input new password" name="new_password" required>
+                    </div>
+                    <button type="submit"  class="btn btn-primary btn-lg" style="width: 100%; text-align:center; display:flex;justify-content:center;align-items:center;border-radius: 5px;">CONFIRM</button>
+                </form>
+                <% if(locals.error) {%>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top:1rem">
+                        <strong><%= error %> </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+
+                <% if(locals.success) {%>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top:1rem">
+                        <strong><%= locals.success %></strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <%- include('../partials/footer') %>
+
+    <script src="/js/home/header.js"></script>
+</body>
+</html>
+

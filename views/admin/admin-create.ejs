@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/admin/head') %> 
+</head>
+<body>
+    
+    <%- include('../partials/admin/navbar') %>
+    <div class="main container" style="display:flex;justify-content: center;align-items:center;margin-top: 2rem;">
+        <div class="col-md-8 col-md-offset-2">
+	        
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin">Admin-Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Post</li>
+                </ol>
+            </nav>
+    		
+    		<form action="/admin/create" method="POST" encType="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="title">Post Title</label>
+                    <input type="text" class="form-control" name="title" />
+                </div>
+
+    		    
+    		    <div class="form-group">
+                    <label for="content">Post content</label>
+    		        <textarea rows="5" class="form-control" name="content" ></textarea>
+    		    </div>
+                
+                
+                <label for="sampleFile">Upload an image cover: </label>
+                <input type="file" id="inputGroupFile01" name="sampleFile" accept="image/*">
+                
+
+                <div class="form-group input-group mb-3" style="margin-top: 1rem;">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Choose Category</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="category">
+                      <option selected>Choose...</option>
+                      <option name="programming">Programming</option>
+                      <option name="languages">Languages</option>
+                    </select>
+                </div>
+
+            
+    		    <div class="form-group final">
+                    <% if(locals.error) { %>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong><%= error %> </strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <% } %>
+    
+                    <% if(locals.success) { %>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong><%= success %> </strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <% } %>
+
+    		        <button type="submit"  class="btn btn-primary btn-lg" style="width: 100%;">Create</button>
+    		    </div>
+
+    		</form>
+		</div>
+    </div>
+<script>
+    var input = document.querySelector('input[name=basic]');
+    var tagify=new Tagify(input);
+</script>
+</body>
+</html>

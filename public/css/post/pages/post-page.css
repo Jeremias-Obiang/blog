@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --light-grey:#c7bfaf;
+    --black:#000000;
+    --dark-grey:#333230;
+    --extra-light-grey:#f2f2f2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body,html{
+    width:100%;
+    height:100%;
+}
+
+main.post{
+    margin-top: 5rem;
+}
+/* main.post div{
+    margin-bottom: 1rem;
+} */
+/* --------------------Post Styles-------------- */
+
+/* Post-header styles */
+.post-header .categories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-header .categories ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-header .categories ul li::after{
+    margin:0px 5px;
+    content: "/";
+}
+.post-header .categories ul li a{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.post-header .title,.post-header .date{
+    text-align: center;
+}
+.post-header .title h1{
+    font-family: Barlow Condensed!important;
+    font-size: 28px !important;
+    line-height: 36px!important;
+    font-style: normal!important;
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+/* End Post-Header styles */
+
+
+/* Post Image cover style */
+.post-header .image{
+    width: 100%;
+    height: 270px;
+}
+.post-header .image img{
+    width: 100%;
+    height: 100%;
+}
+/* End Post image style */
+
+
+/* Post Content style */
+.post .content{
+    margin-bottom: 40px;
+}
+/* End Post Content style */
+
+
+/* Post Footer style */
+.post-footer .tags ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.post-footer .tags ul span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-footer .tags ul li{
+    padding: 0px 4px;
+    margin: 3px 10px;
+    background-color:var(--dark-grey);
+}
+.post-footer .tags ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.post-footer .share{
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+}
+.post-footer .share ul{
+    list-style-type: none;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+.post-footer .share ul span{
+    padding-right: 10px;
+}
+.post-footer .share ul li{
+    margin-right: 10px;
+}
+.post-footer .share ul li .fab.fa-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+          /* Also define standard property for compatibility  */
+          background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.post-footer .share ul li .fab.fa-whatsapp{
+    color: green;
+}
+
+/* End Post footer style */
+
+/* -------------------End Post Styles--------------- */
+
+
+
+/*----------------------------Similar Post section styles --------------------- */
+
+.similar-posts{
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    margin-top: 50px;
+}
+
+.similar-posts .posts-wrapper{
+    display: inline-grid;
+    width: 100%;
+    grid-gap: 1em;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 2.5em;
+    height: fit-content;
+    grid-template-columns: 40% 40%;
+}
+.similar-posts .title{
+    background-color:var(--extra-light-grey);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.similar-posts .title h3{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin:0;
+}
+.similar-posts .card-body{
+    padding: 1rem 0 0 0;
+    margin: 0;
+}
+.similar-posts .card-body .card-title{
+    margin:0 .75rem;
+}
+
+/*----------------------------END Similar Post section styles --------------------- */
+
+
+/*----------------------------Comments  section styles --------------------- */
+
+.comments{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments .comment-title{
+    background-color:var(--extra-light-grey);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.comments .comment-title h3{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin:0;
+}
+
+ul.comment-list{
+    list-style-type:none;
+}
+
+
+.comments .comment-info{
+    display: flex;
+    margin-bottom:.3rem;
+}
+
+.comments .comment-info i,.comments .comment-info h6,.comments .comment-info span{
+    padding-right: 10px;
+}
+
+body > main > div > div.comments > ul > li > div > div > div.comment-text > p{
+    color:#737373;
+    padding-left:2rem;
+}
+
+.leave-comments .title{
+    background-color:var(--extra-light-grey);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.leave-comments .title h3{
+    font-family: Barlow Condensed;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin:0;
+}
+.comment-text textarea{
+    height:170px;
+}
+
+.author-details .col-md-6{
+    padding:0;
+}
+.leave-comments form button{
+    font-family: Barlow Condensed;
+    font-size: 14px !important;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    width: 120px;
+    border: none;
+    height:40px;
+    background-color:var(--dark-grey);
+    border-radius:0;
+    color:white;
+}
+.leave-comments form button:hover{
+    background-color:black;
+}
+/*----------------------------END Comments  section styles --------------------- */
+
+@media (max-width:700){
+    .similar-posts .posts-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px){
+    .similar-posts .posts-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+}

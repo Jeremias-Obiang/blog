@@ -1,0 +1,154 @@
+<header>
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                    <li><a href="#"></a><i class="fab fa-instagram fa-lg"></i></li>
+                    <li><a href="#"></a><i class="fab fa-youtube fa-lg"></i></li>
+                    <li><a href="#"></a><i class="fab fa-github fa-lg"></i></li>
+                </ul>
+
+                <ul class="nav">
+                    <% if(locals.nav=="home") {%>
+                        <li class="active nav"><a href="/">Home</a></li>
+                        <li class="nav"><a href="/about">About</a></li>
+                        <% if(locals.user) {%>
+                            <li class="nav"><a href="/profile/<%= user.id %>">My Profile</a></li>
+                        <%}%>
+                    <% } else if(locals.nav=="about") {%>
+                        <li class="nav"><a href="/">Home</a></li>
+                        <li class="active nav"><a href="/about">About</a></li>
+                        <% if(locals.user) {%>
+                            <li class="nav"><a href="/profile/<%= user.id %>">My Profile</a></li>
+                        <%}%>
+                    <% } else if(locals.nav=="contact") {%>
+                        <li class="nav"><a href="/">Home</a></li>
+                        <li class="nav"><a href="/about">About</a></li>
+                        <% if(locals.user) {%>
+                            <li class="nav"><a href="/profile/<%= user.id %>">My Profile</a></li>
+                        <%}%>
+                    <% } else if(locals.nav=="profile" && user) {%>
+                        <li class="nav"><a href="/">Home</a></li>
+                        <li class="nav"><a href="/about">About</a></li>
+                        <li class="active nav"><a href="/profile/<%= user.id %>">My Profile</a></li>
+                    <% } else if(locals.user){%>
+                        <li class="nav"><a href="/">Home</a></li>
+                        <li class="nav"><a href="/about">About</a></li>
+                        <li class="nav"><a href="/profile/<%= user.id %>">My Profile</a></li>
+                    <%}else{%>
+                        <li class="nav"><a href="/">Home</a></li>
+                        <li class="nav"><a href="/about">About</a></li>
+                    <%}%>
+                        
+
+
+                </ul>
+                
+                <ul class="nav">
+                    <li class="nav">
+                        <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </li>
+
+
+                    <% if(locals.user) {%> 
+                        <a href="/logout"  style="text-decoration: none; color:white" ><i class="fas fa-sign-out-alt"></i> <span style="font-weight: 300;">Logout</span></a>
+                    <%} else {%> 
+                        <li class="nav" style="padding: 0;"><a href="/login"><i class="fas fa-sign-in-alt" style="margin-right:10px;"></i>Login</a></li>
+                    <% } %> 
+                </ul>
+            </div>
+                                
+            <ul class="container menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+
+                <div class="profile">
+                    <img src="/upload/jeremias.jpg" alt="" class="img-fluid">
+                    <p class="text">Hello my name is Jeremias Obiang I love programming and learning new languages come and discover my world.</p>
+                    <button><a href="/about">More about me</a></button>
+                </div>
+                
+                <div class="links">
+                    <ul>
+                        <% if(locals.nav=="home"){%>
+                            <li class="active nav"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                            <li class="nav"><a href="/about"><i class="fas fa-address-card"></i>About</a></li>
+                            <% if(locals.user) {%> 
+                                <li class="nav">
+                                    <a href="/logout"><i class="fas fa-sign-in-alt" style="margin-right:4px;"></i>Logout</a>
+                                </li>
+                                <li class="nav" style="justify-content: center;">
+                                    <a href="/profile/<%= user.id %>"  class="dropdown-item" style="text-decoration: none; color:#c7bfaf;padding: 0;" ><i class="fas fa-user-cog"></i>Profile</a>
+                                </li>
+                            <%} else {%> 
+                                    <li class="nav" ><a href="/login"><i class="fas fa-sign-in-alt" style="margin-right:10px;"></i>Login</a></li>
+                            <% } %> 
+                        <% } %> 
+                        <% if(locals.nav=="about"){%>
+                            <li class="nav"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                            <li class="active nav"><a href="/about"><i class="fas fa-address-card"></i>About</a></li>
+                            <% if(locals.user) {%> 
+                                <li class="nav">
+                                    <a href="/logout"><i class="fas fa-sign-in-alt" style="margin-right:4px;"></i>Logout</a>
+                                </li>
+                                <li class="nav" style="justify-content: center;">
+                                    <a href="/profile/<%= user.id %>"  class="dropdown-item" style="text-decoration: none; color:#c7bfaf;padding: 0;" ><i class="fas fa-user-cog"></i>Profile</a>
+                                </li>
+                            <%} else {%> 
+                                    <li class="nav"><a href="/login"><i class="fas fa-sign-in-alt" style="margin-right:10px;"></i>Login</a></li>
+                            <% } %> 
+                        <% } %> 
+
+                        <% if(locals.nav=="profile"){%>
+                            <li class="nav"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                            <li class="nav"><a href="/about"><i class="fas fa-address-card"></i>About</a></li>
+                            <% if(locals.user) {%> 
+                                <li class="nav">
+                                    <a href="/logout"><i class="fas fa-sign-in-alt" style="margin-right:4px;"></i>Logout</a>
+                                </li>
+                                <li class="active nav" style="justify-content: center;">
+                                    <a href="/profile/<%= user.id %>" style="text-decoration: none;" ><i class="fas fa-user-cog"></i>Profile</a>
+                                </li>
+                            <%} else {%> 
+                                    <li class="nav" ><a href="/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                            <% } %> 
+                        <% } %> 
+
+                        <% if(locals.nav!="profile" && locals.nav!="home" && locals.nav!="about"){%>
+                            <li class="nav"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                            <li class="nav"><a href="/about"><i class="fas fa-address-card"></i>About</a></li>
+                            <% if(locals.user) {%> 
+                                <li class="nav">
+                                    <a href="/logout"><i class="fas fa-sign-in-alt" style="margin-right:4px;"></i>Logout</a>
+                                </li>
+                                <li class="nav" style="justify-content: center;">
+                                    <a href="/profile/<%= user.id %>" style="text-decoration: none;" ><i class="fas fa-user-cog"></i>Profile</a>
+                                </li>
+                            <%} else {%> 
+                                    <li class="nav" ><a href="/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                            <% } %> 
+                        <% } %> 
+                    </ul>
+                </div>
+            </ul>
+
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    
+    <% if(locals.nav == "home") {%>
+        <div class="banner">
+            <p style="font-family: 'Rochester', cursive;" class="name"><a href="/">Jeremias Obiang</a></p>
+            <p class="description">Creative blogger</p>
+        </div>
+    <%}%>
+
+</header>

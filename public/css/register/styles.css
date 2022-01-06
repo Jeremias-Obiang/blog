@@ -1,0 +1,138 @@
+div.container.form{
+    width: 100%;
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+    flex-direction: column;
+}
+
+
+    
+div.container div.card{
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%), 0 0 5px rgb(0 0 0 / 10%);
+}
+
+div.container div.card.card-signup{
+    margin-top:100px;
+    width: 100%;
+}
+
+
+div.container div.card div.card-header.header1{
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+div.container div.card div.card-header.header1 p{
+    font-size:18px;
+    font-weight: bold;
+    margin: 0;
+}
+div.container div.card div.card-header.header1 .alert{
+    width:90%;
+}
+
+#form{
+    border-radius:2%;
+    padding:0;
+}
+
+
+#form div.submit-button{
+    display:flex;
+    justify-content: space-between;
+}
+
+#form div.submit-button .btn{
+    padding:0;
+    margin:0;
+}
+
+#form .forgot-password{
+    text-decoration: none;
+    color: cornflowerblue;
+    font-size: 14px;
+}
+
+div.card div.card-body div.submit-button{
+    margin-top: 40px;   
+    margin-bottom: 30px
+}
+
+button.btn.btn-primary{
+    padding: 25px;
+    background-color:#1b1b1b;
+    border: none;
+    border-radius:0;
+    width:100%;
+    height:40px;
+}
+
+div.container div.card.login-options{
+    margin: 20px;
+    width: 100%;
+}
+    
+    
+div.card div.card-body div.seperate{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.card div.card-body div.seperate .line{
+    border: 0.2px solid #ccc8c8;
+    width: 45%;
+    height:0.2px;
+    margin: 2px;
+}
+
+
+
+div.card div.card-body div.login-options ul{
+    display: flex;
+    list-style: none;
+    justify-content:center;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+div.card div.card-body div.login-options ul li{
+    text-align: center;
+    padding:15px;
+}
+
+
+div.card div.card-body div.login-options ul li .fab.fa-apple{
+    color: rgb(54, 59, 66);
+}
+
+div.card div.card-body div.login-options ul li img{
+    width: 32px;
+    height: 32px;
+}
+
+
+
+div.container.form div.signup{
+    padding: 5px;
+}
+div.container.form div.sig p{
+    font-size:14px;
+    margin-bottom: 70px;
+}
+
+div.container.form div.signup p a{
+    text-decoration: none;
+}
+
+
+.form-signup .card-signup .alert{
+    text-align: center;
+}
+

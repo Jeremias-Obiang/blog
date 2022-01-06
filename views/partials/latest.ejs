@@ -1,0 +1,21 @@
+<aside class="latest">
+    <div class="latest-container">
+        <div class="header">
+            <h3 class="title">latest posts</h3>
+        </div>
+
+        <div class="posts">
+            <% latest.forEach(post => { %>
+                <div class="post-1 post">
+                    <a href="/post/<%= post.id %> "><img src="<%= post.image %>" class="image"></a>
+                    <div class="description">
+                        <h4 class="title"> <%= post.title.slice(0,20) %> </h4>
+                        <p class="date"> <%= post.created_at %> </p>
+                    </div>
+                </div>
+
+            <% }) %>
+
+        </div>
+    </div>
+</aside>
